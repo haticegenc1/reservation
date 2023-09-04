@@ -1,0 +1,71 @@
+:root {
+	--text: #39393a;
+	--white: #e6e6e6;
+	--red: #c44536;
+
+	background-color: var(--white);
+	color: var(--text);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+	align-items: center;
+	display: flex;
+	font-family: "Roboto", sans-serif;
+	height: 100vh;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+}
+
+.calendar {
+	background: linear-gradient(145deg, #f6f6f6, #cfcfcf);
+	border-radius: 42px;
+	box-shadow: 35px 35px 70px #c4c4c4, -35px -35px 70px #ffffff;
+	padding: 2.5rem;
+}
+
+.calendar__title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.calendar__next,
+.calendar__prev {
+	background-color: transparent;
+	border: none;
+}
+
+.days {
+	display: grid;
+	grid-template-columns: repeat(7, 4rem);
+	grid-template-rows: repeat(6, 4rem);
+}
+
+.day {
+	align-items: center;
+	border-radius: 12px;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
+}
+
+.day--no-visible {
+	opacity: 0;
+}
+
+.today {
+	background-color: var(--red);
+	color: var(--white);
+}
+
+@media screen and (max-width: 678px) {
+	.days {
+		grid-template-columns: repeat(7, 2.5rem);
+		grid-template-rows: repeat(7, 2.5rem);
+	}
+}
